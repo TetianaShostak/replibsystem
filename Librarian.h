@@ -21,6 +21,8 @@ public:
     void getName() const;
     void getAge() const;
 
+    void displayInfo() const ;
+
     void addBookToLibrary(Book& book);
     void removeBookFromLibrary(Book& book);
 };
