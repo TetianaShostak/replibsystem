@@ -17,8 +17,13 @@ Librarian::~Librarian() {
     cout << "Librarian destructor called." << endl;
 }
 
+//this
+void Librarian::displayInfo() const {
+    cout << "Librarian: " << this->name << ", Age: " << this->age << endl;
+}
+
 void Librarian::getName() const {
-    cout << "Librarian Name: " << name << endl;
+   cout << "Librarian Name: " << name << endl;
 }
 
 void Librarian::getAge() const {
