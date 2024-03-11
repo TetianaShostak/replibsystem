@@ -7,8 +7,8 @@
 #include <string>
 #include <vector>
 #include "Book.h"
-
 using namespace std;
+
 class User {
 private:
     string name;
@@ -22,7 +22,10 @@ public:
     void getName() const;
     void getAge() const;
     void borrowBook(const Book& book);
-};
+//move
+    User(User&& other) noexcept;
 
+
+};
 
 #endif //UNTITLED_USER_H
