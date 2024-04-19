@@ -1,18 +1,16 @@
 #pragma once
 #include "User.h"
 #include <string>
+using namespace std;
 
 class Student : public User {
 private:
-    std::string university;
+    string university;
 
 public:
+    Student(const string& name, int age, const string& university);
+    virtual ~Student();
 
-    Student(const std::string& name, int age, const std::string& university);
-    Student(const Student& other); // Copy constructor
-
-    Student& operator=(const Student& other);
-
-    ~Student();
-    void displayInfo() const;
+    void displayInfo() const override;
+    void processInformation() const override;
 };
