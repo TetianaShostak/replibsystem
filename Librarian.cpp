@@ -5,13 +5,13 @@ using namespace std;
 
 Librarian::Librarian(const string& name, int age, const string& libraryName)
         : User(name, age), libraryName(libraryName) {
-    cout << "Librarian constructor called." << std::endl;
+   // cout << "Librarian constructor called." << std::endl;
 }
 
-Librarian::Librarian() : Librarian("Unknown", 0, "Unknown Library") {}
+// Librarian::Librarian() : Librarian("Unknown", 0, "Unknown Library") {}
 
 Librarian::~Librarian() {
-    cout << "Librarian destructor called." << std::endl;
+    cout << "Librarian destructor called." << endl;
 }
 
 void Librarian::addBookToLibrary(const Book& book) {
@@ -25,10 +25,9 @@ void Librarian::removeBookFromLibrary(const string& bookTitle) {
 }
 
 void Librarian::displayInfo() const {
-    cout << "Librarian: " << getName() << ", Age: " << getAge()
-              << ", Library Name: " << libraryName << endl;
+    cout << "Librarian: " << getName() << ", Age: " << getAge() << ", Library Name: " << libraryName << endl;
 }
 
-string Librarian::getLibraryName() const {
-    return libraryName;
+void Librarian::processInformation() const {
+    cout << "Organizing library data for: " << libraryName << endl;
 }
