@@ -2,16 +2,17 @@
 #include <vector>
 #include "User.h"
 #include "Book.h"
+using namespace std;
 
 class Library {
 private:
-    std::vector<User> users;
-    std::vector<Book> books;
+    vector<User*> users; // Changed to store pointers to User
+    vector<Book> books;
 
 public:
     Library();
     ~Library();
 
-    void addUser(const User& user);
+    void addUser(User* user); // Modified to accept User pointers
     void addBook(const Book& book);
 };
