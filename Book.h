@@ -1,11 +1,13 @@
+
 #pragma once
 #include <string>
 #include <iostream>
+using namespace std;
 
 class Book {
 private:
-    std::string title;
-    std::string author;
+    string title;
+    string author;
     int yearPublished;
     static int totalBooks;
 
@@ -17,11 +19,11 @@ public:
     Book(const Book& other);
 
     // Destructor
-    ~Book();
+    virtual ~Book(); // Virtual to support polymorphic delete
 
     // Methods
-    std::string getTitle() const;
-    std::string getAuthor() const;
+    string getTitle() const;
+    string getAuthor() const;
     int getYear() const;
     static void printLibraryName();
     void displayInfo() const;
@@ -29,5 +31,5 @@ public:
 
     // Operator overloading
     Book& operator++(); // Prefix increment
-    friend std::ostream& operator<<(std::ostream& os, const Book& book);
+    friend ostream& operator<<(ostream& os, const Book& book);
 };
