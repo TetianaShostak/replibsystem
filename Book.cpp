@@ -1,10 +1,13 @@
 #include "Book.h"
+using namespace std;
+
+
 
 int Book::totalBooks = 0;
 
-Book::Book(const std::string& title, const std::string& author, int yearPublished)
+Book::Book(const string& title, const string& author, int yearPublished)
         : title(title), author(author), yearPublished(yearPublished) {
-    std::cout << "Book constructor called." << std::endl;
+    cout << "Book constructor called." << endl;
     totalBooks++;
 }
 
@@ -12,20 +15,20 @@ Book::Book() : Book("Unknown", "Unknown", 0) {}
 
 Book::Book(const Book& other)
         : title(other.title), author(other.author), yearPublished(other.yearPublished) {
-    std::cout << "Book copy constructor called." << std::endl;
+    cout << "Book copy constructor called." << endl;
     totalBooks++;
 }
 
 Book::~Book() {
-    std::cout << "Book destructor called." << std::endl;
+    cout << "Book destructor called." << endl;
     totalBooks--;
 }
 
-std::string Book::getTitle() const {
+string Book::getTitle() const {
     return title;
 }
 
-std::string Book::getAuthor() const {
+string Book::getAuthor() const {
     return author;
 }
 
@@ -34,11 +37,11 @@ int Book::getYear() const {
 }
 
 void Book::printLibraryName() {
-    std::cout << "Library: Memory Library" << std::endl;
+    cout << "Library: Memory Library" << endl;
 }
 
 void Book::displayInfo() const {
-    std::cout << "Title: " << title << ", Author: " << author << ", Year Published: " << yearPublished << std::endl;
+    cout << "Title: " << title << ", Author: " << author << ", Year Published: " << yearPublished << endl;
 }
 
 int Book::getTotalBooks() {
@@ -50,7 +53,7 @@ Book& Book::operator++() {
     return *this;
 }
 
-std::ostream& operator<<(std::ostream& os, const Book& book) {
+ostream& operator<<(ostream& os, const Book& book) {
     os << "Title: " << book.title << ", Author: " << book.author << ", Year Published: " << book.yearPublished;
     return os;
 }
