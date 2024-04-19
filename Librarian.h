@@ -2,21 +2,21 @@
 #include <vector>
 #include "User.h"
 #include "Book.h"
+using namespace std;
 
 class Librarian : public User {
 private:
-    std::string libraryName;
-    std::vector<Book> libraryBooks;
+    string libraryName;
+    vector<Book> libraryBooks;
 
 public:
-    Librarian(const std::string& name, int age, const std::string& libraryName);
-    Librarian();
-
-    ~Librarian();
+    Librarian(const string& name, int age, const string& libraryName);
+    virtual ~Librarian();
 
     void addBookToLibrary(const Book& book);
-    void removeBookFromLibrary(const std::string& bookTitle);
-    void displayInfo() const;
+    void removeBookFromLibrary(const string& bookTitle);
+    void displayInfo() const override;
+    void processInformation() const override;
 
-    std::string getLibraryName() const;
+   // string getLibraryName() const;
 };
