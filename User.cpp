@@ -1,17 +1,17 @@
 #include "User.h"
 #include <iostream>
 
-User::User(const std::string& name, int age) : name(name), age(age) {
-    std::cout << "User constructor called." << std::endl;
+User::User(const string& name, int age) : name(name), age(age) {
+    cout << "User constructor called." << endl;
 }
 
 User::User() : User("Unknown", 0) {}
 
 User::~User() {
-    std::cout << "User destructor called." << std::endl;
+    cout << "User destructor called." << endl;
 }
 
-std::string User::getName() const {
+string User::getName() const {
     return name;
 }
 
