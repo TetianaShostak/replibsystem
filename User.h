@@ -2,19 +2,26 @@
 #include <string>
 #include <vector>
 #include "Book.h"
+using namespace std;
+
+
 
 class User {
-private:
-    std::string name;
+
+protected:
+    string name;
     int age;
-    std::vector<Book> borrowedBooks;
+    vector<Book> borrowedBooks;
 
 public:
-    User(const std::string& name, int age);
+    User(const string& name, int age);
     User();
-    ~User();
+    virtual ~User(); // Virtual destructor
 
-    std::string getName() const;
+    string getName() const;
     int getAge() const;
     void borrowBook(const Book& book);
+
+    virtual void displayInfo() const = 0; // pure virtual function
+    virtual void processInformation() const = 0; //  pure virtual function
 };
